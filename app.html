@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mauricio Jun - Cartão Digital</title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TJ8NZCV');</script>
+	<!-- End Google Tag Manager -->
+	<style>
+		* {
+			margin:0;
+			padding:0
+		}
+		html, body {
+			height:100%;
+			margin:0;
+			padding:0;
+		}
+		.h_iframe {
+			position:relative;
+		}
+		.h_iframe .ratio {
+			display:block;
+			width:100%;
+			height:auto;
+		}
+		.h_iframe iframe {
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ8NZCV"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+	<div class="wrapper">
+		<div class="h_iframe">
+			<!-- a transparent image is preferable -->
+			<img class="ratio" src="https://mauriciojun.github.io/dcard/16x9.png" />
+			<iframe id="iframe_id" name="iframe_name" src="https://mauriciojun-dcard.blogspot.com/" frameborder="0" allowfullscreen iframe-height="0"></iframe>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload = function(){
+			// Keep checking for message
+			var checkIframeMessageExist = setInterval(function() {
+				var isLoaded = $("#iframe_id").attr("iframe-height");
+				if (isLoaded == '0') {
+					console.log('iframe failed to load');
+					clearInterval(checkIframeMessageExist);
+				} else {
+					console.log('iframe loaded');
+					$("#iframe_id").height(isLoaded);
+					clearInterval(checkIframeMessageExist);
+				}
+			}, 100); // check every 100ms
+		}
+		
+		if (window.addEventListener) {
+			// For standards-compliant web browsers
+			window.addEventListener("message", displayMessage, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("onmessage", displayMessage);
+		} else {
+			window.onmessage = displayMessage();
+		}
+		
+		function displayMessage (evt) {
+			var message;
+			if (evt.origin !== "https://mauriciojun-dcard.blogspot.com") {
+				message = "Negado";
+			} else {
+				message = "I got " + new Date(evt.timeStamp) + " \t " + evt.data.name + " :: " + evt.data.iframeheight.toString().fontcolor('green') + " :: " + evt.data.number.toString().fontcolor('blue') + evt.data + " from " + evt.origin + "<br>";
+				if(evt.data.iframeheight.toString() !== '0'){
+					$("#iframe_id").attr('iframe-height', evt.data.iframeheight);
+				}
+			}
+			//return message;
+		}
+	</script>
+</body>
+</html>
