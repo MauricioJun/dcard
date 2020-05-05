@@ -83,10 +83,20 @@
 				message = "I got " + new Date(evt.timeStamp) + " \t " + evt.data.name + " :: " + evt.data.iframeheight.toString().fontcolor('green') + " :: " + evt.data.number.toString().fontcolor('blue') + evt.data + " from " + evt.origin + "<br>";
 				if(evt.data.iframeheight.toString() !== '0'){
 					$("#iframe_id").attr('iframe-height', evt.data.iframeheight);
+					console.log('iframe height changed: ' + evt.data.iframeheight);
 				}
 			}
 			//return message;
 		}
+		/*
+		function iframeHeightRecall() {
+			console.log('Iframe Height Recall');
+			$('.basket_amount').css({"border": "1px solid red"})
+		}
+		$(document).ready(function(){
+			$("#iframe_id").bind("DOMSubtreeModified", iframeHeightRecall);
+		});
+		*/
 	</script>
 </body>
 </html>
