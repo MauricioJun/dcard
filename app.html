@@ -214,6 +214,7 @@
 				if(evt.data.iframeheight.toString() !== '0'){
 					$("#iframe_id").attr('iframe-height', evt.data.iframeheight);
 					console.log('iframe height changed: ' + evt.data.iframeheight);
+					modal.style.display = "block";
 				}
 			}
 			//return message;
@@ -246,9 +247,9 @@
 			}
 		}
 		
-		window.onload = function(){
-			modal.style.display = "block";
-		}
+		//window.onload = function(){
+		//	modal.style.display = "block";
+		//}
 	</script>
 </body>
 </html>
