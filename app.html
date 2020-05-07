@@ -214,7 +214,7 @@
 	</div>
 	
 	<!-- The Modal -->
-	<div id="myModal" class="modal">
+	<div id="myModal" class="modal add-to">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
@@ -226,13 +226,14 @@
 				<p>Some text in the Modal Body</p>
 				<p>Some other text...</p>
 				-->
-				<label class="fullscreenline add-to">
+				<!-- label class="fullscreenline add-to" -->
+				<label class="fullscreenline">
 					<!-- 
 					<button onclick="openFullscreen();" class="firstbutt">Abrir tela cheia</button>
 					<button onclick="closeFullscreen();" class="endbutt">Sair tela cheia</button>
 					-->
-					Para facilitar <br />
-					<button class="add-to-btn">Adicione à tela inicial</button>
+					Para facilitar, você pode<br />
+					<button class="add-to-btn">Adicionar à tela inicial</button>
 				</label>
 			</div>
 			<div class="modal-footer">
@@ -330,7 +331,9 @@
 		let deferredPrompt;
 		var label = document.querySelector('.add-to');
 		var button = document.querySelector('.add-to-btn');
+		var modaladd = document.querySelector('.modal');
 		label.style.display = 'none';
+		modaladd.style.display = 'none';
 
 		window.addEventListener('beforeinstallprompt', (e) => {
 			// Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -338,10 +341,12 @@
 			// Stash the event so it can be triggered later.
 			deferredPrompt = e;
 			label.style.display = 'block';
+			modaladd.style.display = 'block';
 
 			button.addEventListener('click', (e) => {
 				// hide our user interface that shows our A2HS button
 				label.style.display = 'none';
+				modaladd.style.display = 'none';
 				// Show the prompt
 				deferredPrompt.prompt();
 				// Wait for the user to respond to the prompt
