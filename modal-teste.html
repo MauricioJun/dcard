@@ -20,7 +20,8 @@
 			$('#tire-specs th a').each(function() {
 				var $link = $(this);
 				var $dialog = $('<div></div>')
-					.load($link.attr('href') + ' #content')
+					//.load($link.attr('href') + ' #content')
+					.load($link.attr('href'))
 					.dialog({
 						autoOpen: false,
 						title: $link.attr('title'),
