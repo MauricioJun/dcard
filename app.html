@@ -256,26 +256,24 @@
 					clearInterval(checkIframeMessageExist);
 				} else {
 					console.log('iframe loaded');
-					
 					if (isLoaded <= getHeight()) {
 						isLoaded = getHeight();
 					}
-					
-					alert('isLoaded = ' + isLoaded + ' / getHeight = ' + getHeight() + ' / window.innerHeight = ' + window.innerHeight);
+					//alert('isLoaded = ' + isLoaded + ' / getHeight = ' + getHeight() + ' / window.innerHeight = ' + window.innerHeight);
 					$("#iframe_id").height(isLoaded);
 					clearInterval(checkIframeMessageExist);
 				}
 			}, 100); // check every 100ms
 		}
 		
-			function getHeight(){
-				var body = document.body,
-					html = document.documentElement;
+		function getHeight(){
+			var body = document.body,
+				html = document.documentElement;
 
-				var height = Math.max( body.scrollHeight, body.offsetHeight, 
-									   html.clientHeight, html.scrollHeight, html.offsetHeight );
-				return height;
-			}
+			var height = Math.max( body.scrollHeight, body.offsetHeight, 
+								   html.clientHeight, html.scrollHeight, html.offsetHeight );
+			return height;
+		}
 		
 		if (window.addEventListener) {
 			// For standards-compliant web browsers
