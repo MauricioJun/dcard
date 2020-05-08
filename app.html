@@ -257,6 +257,7 @@
 					if (isLoaded <= getHeight()) {
 						isLoaded = getHeight();
 					}
+					alert('isLoaded = ' + isLoaded + ' / getHeight = ' + getHeight() + ' / window.innerHeight = ' + window.innerHeight);
 					$("#iframe_id").height(isLoaded);
 					clearInterval(checkIframeMessageExist);
 				}
