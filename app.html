@@ -344,12 +344,14 @@
 				(displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches
 			);
 		}
-		var fullscreenline = document.getElementsByClassName("fullscreenline")[0];
-		alert(isPwa());
 		if (isPwa()) {
-			fullscreenline.style.display = "none";
+			var topmsg={ topname: window.name, topfullscreen: true };
+			parent.postMessage(topmsg, '*');
+			console.log('top iframe fullscreen sent!!!');
 		} else {
-			fullscreenline.style.display = "block";
+			var topmsg={ topname: window.name, topfullscreen: false };
+			parent.postMessage(topmsg, '*');
+			console.log('top iframe fullscreen sent!!!');
 		}
 	</script>
 	<script>
