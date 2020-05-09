@@ -345,13 +345,14 @@
 			);
 		}
 		var childIframe = document.getElementById("iframe_id");
+		console.log('window fullscreen!!! - ' + isPwa());
 		if (isPwa()) {
 			var topmsg={ topname: window.name, topfullscreen: 1 };
-			childIframe.postMessage(topmsg, '*');
+			childIframe.contentWindow.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		} else {
 			var topmsg={ topname: window.name, topfullscreen: 0 };
-			childIframe.postMessage(topmsg, '*');
+			childIframe.contentWindow.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		}
 	</script>
