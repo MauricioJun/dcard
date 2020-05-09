@@ -345,11 +345,11 @@
 			);
 		}
 		if (isPwa()) {
-			var topmsg={ topname: window.name, topfullscreen: true };
+			var topmsg={ topname: window.name, topfullscreen: 1 };
 			parent.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		} else {
-			var topmsg={ topname: window.name, topfullscreen: false };
+			var topmsg={ topname: window.name, topfullscreen: 0 };
 			parent.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		}
