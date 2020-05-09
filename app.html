@@ -312,27 +312,18 @@
 								   html.clientHeight, html.scrollHeight, html.offsetHeight );
 			return height;
 		}
-		/*
+		
 		if (window.addEventListener) {
 			// For standards-compliant web browsers
 			window.addEventListener("message", displayMessage, false);
-			console.log('01');
 		} else if (window.attachEvent) {
 			window.attachEvent("onmessage", displayMessage);
-			console.log('02');
 		} else {
 			window.onmessage = displayMessage();
-			console.log('03');
 		}
-		*/
-		window.onmessage = (evt) => {
-			console.log('Received message: ${evt.data}' + evt.data.name);
-		};
+		
 		function displayMessage (evt) {
 			console.log('iframe height changed!!!');
-			var message;
-			message = '1...2...3...';
-			/*
 			var message;
 			if (evt.origin !== "https://mauriciojun-dcard.blogspot.com") {
 				message = "Negado";
@@ -359,8 +350,7 @@
 					console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 				}
 			}
-			*/
-			return message;
+			//return message;
 		}
 		
 		function isPwa() { 
