@@ -316,10 +316,13 @@
 		if (window.addEventListener) {
 			// For standards-compliant web browsers
 			window.addEventListener("message", displayMessage, false);
+			console.log('01');
 		} else if (window.attachEvent) {
 			window.attachEvent("onmessage", displayMessage);
+			console.log('02');
 		} else {
 			window.onmessage = displayMessage();
+			console.log('03');
 		}
 		
 		function displayMessage (evt) {
