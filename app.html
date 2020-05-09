@@ -344,13 +344,14 @@
 				(displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches
 			);
 		}
+		var childIframe = document.getElementById("iframe_id");
 		if (isPwa()) {
 			var topmsg={ topname: window.name, topfullscreen: 1 };
-			parent.postMessage(topmsg, '*');
+			childIframe.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		} else {
 			var topmsg={ topname: window.name, topfullscreen: 0 };
-			parent.postMessage(topmsg, '*');
+			childIframe.postMessage(topmsg, '*');
 			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		}
 	</script>
