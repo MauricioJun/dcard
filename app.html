@@ -347,11 +347,11 @@
 		if (isPwa()) {
 			var topmsg={ topname: window.name, topfullscreen: true };
 			parent.postMessage(topmsg, '*');
-			console.log('top iframe fullscreen sent!!!');
+			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		} else {
 			var topmsg={ topname: window.name, topfullscreen: false };
 			parent.postMessage(topmsg, '*');
-			console.log('top iframe fullscreen sent!!!');
+			console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
 		}
 	</script>
 	<script>
