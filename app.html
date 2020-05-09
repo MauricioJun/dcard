@@ -291,7 +291,7 @@
 				var isLoaded = $("#iframe_id").attr("iframe-height");
 				if (isLoaded == '0') {
 					console.log('iframe failed to load');
-					clearInterval(checkIframeMessageExist);
+					//clearInterval(checkIframeMessageExist);
 				} else {
 					console.log('iframe loaded');
 					if (isLoaded <= getHeight()) {
