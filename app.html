@@ -327,7 +327,7 @@
 			var message;
 			if (evt.origin !== "https://mauriciojun-dcard.blogspot.com") {
 				message = "Negado";
-				console.log('Negado');
+				console.log('Negado - ' + evt.origin);
 			} else {
 				console.log('Acesso permitido!');
 				message = "I got " + new Date(evt.timeStamp) + " \t " + evt.data.name + " :: " + evt.data.iframeheight.toString().fontcolor('green') + " :: " + evt.data.number.toString().fontcolor('blue') + evt.data + " from " + evt.origin + "<br>";
