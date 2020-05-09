@@ -312,7 +312,7 @@
 								   html.clientHeight, html.scrollHeight, html.offsetHeight );
 			return height;
 		}
-		
+		/*
 		if (window.addEventListener) {
 			// For standards-compliant web browsers
 			window.addEventListener("message", displayMessage, false);
@@ -324,8 +324,11 @@
 			window.onmessage = displayMessage();
 			console.log('03');
 		}
-		
-		function displayMessage () {
+		*/
+		window.onmessage = (evt) => {
+			console.log('Received message: ${evt.data}' + evt.data.name);
+		};
+		function displayMessage (evt) {
 			console.log('iframe height changed!!!');
 			var message;
 			message = '1...2...3...';
