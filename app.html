@@ -337,6 +337,20 @@
 			}
 			//return message;
 		}
+		
+		function isPwa() { 
+			var displayModes = ["fullscreen", "standalone", "minimal-ui"];
+			return displayModes.some(
+				(displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches
+			);
+		}
+		var fullscreenline = document.getElementsByClassName("fullscreenline")[0];
+		alert(isPwa());
+		if (isPwa()) {
+			fullscreenline.style.display = "none";
+		} else {
+			fullscreenline.style.display = "block";
+		}
 	</script>
 	<script>
 		// Get the modal
