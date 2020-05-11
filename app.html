@@ -322,11 +322,11 @@
 				if (isPwa()) {
 					var topmsg={ topname: window.name, topfullscreen: 1 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
-					console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
+					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				} else {
 					var topmsg={ topname: window.name, topfullscreen: 0 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
-					console.log('top iframe fullscreen sent!!!' + topmsg.topfullscreen);
+					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				}
 			}
 			//return message;
