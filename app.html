@@ -390,7 +390,7 @@
 		var button = document.querySelector('.add-to-btn');
 		var modaladd = document.querySelector('.modal');
 		label.style.display = 'none';
-		modaladd.style.display = 'none';
+		//modaladd.style.display = 'none';
 
 		window.addEventListener('beforeinstallprompt', (e) => {
 			// Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -398,7 +398,7 @@
 			// Stash the event so it can be triggered later.
 			deferredPrompt = e;
 			label.style.display = 'block';
-			modaladd.style.display = 'block';
+			//modaladd.style.display = 'block';
 
 			button.addEventListener('click', (e) => {
 				// hide our user interface that shows our A2HS button
