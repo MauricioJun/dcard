@@ -273,10 +273,10 @@
 					console.log('iframe failed to load');
 					clearInterval(checkIframeMessageExist);
 				} else {
-					console.log('iframe loaded');
 					if (isLoaded <= getHeight()) {
 						isLoaded = getHeight();
 					}
+					console.log('iframe loaded = ' + isLoaded);
 					//alert('isLoaded = ' + isLoaded + ' / getHeight = ' + getHeight() + ' / window.innerHeight = ' + window.innerHeight);
 					$("#iframe_id").height(isLoaded);
 					clearInterval(checkIframeMessageExist);
@@ -303,7 +303,7 @@
 		}
 		
 		function displayMessage (evt) {
-			console.log('iframe height changed!!!');
+			console.log('iframe height sent by iframe!!!');
 			var message;
 			if (evt.origin !== "https://mauriciojun-dcard.blogspot.com") {
 				message = "Negado";
@@ -318,7 +318,6 @@
 				}
 				
 				var childIframe = document.getElementById("iframe_id");
-				alert('window fullscreen!!! - ' + isPwa());
 				console.log('window fullscreen!!! - ' + isPwa());
 				if (isPwa()) {
 					var topmsg={ topname: window.name, topfullscreen: 1 };
