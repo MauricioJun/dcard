@@ -321,11 +321,11 @@
 				var childIframe = document.getElementById("iframe_id");
 				console.log('window fullscreen!!! - ' + isPwa());
 				if (isPwa()) {
-					var topmsg={ topname: window.name, topfullscreen: 1 };
+					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 1 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				} else {
-					var topmsg={ topname: window.name, topfullscreen: 0 };
+					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 0 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				}
