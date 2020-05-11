@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://mauriciojun.github.io/dcard/",
+  "start_url": "https://mauriciojun.github.io/dcard/app.html?utm_source=pwa",
   "background_color": "#f9f9f9",
   "display": "standalone",
   "theme_color": "#b5b5b5"
