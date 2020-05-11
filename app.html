@@ -31,6 +31,8 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ruda:400,700,900|Open+Sans:400,600,700,400italic|Black+Ops+One" media="all"/>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all"/>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -38,6 +40,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-TJ8NZCV');</script>
 	<!-- End Google Tag Manager -->
+	
 	<style>
 		* {
 			margin:0;
@@ -168,30 +171,7 @@
 			to {opacity: 1}
 		}
 	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- 
-	<script>
-		var calcHeight = function() {
-			$('#iframe_id').height($(window).height());
-		}
-
-		$(document).ready(function() {
-			calcHeight();
-		}); 
-
-		$(window).resize(function() {
-			calcHeight();
-		}).load(function() {
-			calcHeight();
-		});
-	</script>
-	-->
 	
-	<!-- link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/ -->
-	<!-- link rel="icon" href="https://mauriciojun.github.io/dcard/favicon-vinho/favicon-512x512.png" type="image/png" sizes="16x16"/ -->
-	<!-- link rel="manifest" href="https://mauriciojun.github.io/dcard/manifest-github.json"/ -->
-	<!-- link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ruda:400,700,900|Open+Sans:400,600,700,400italic|Black+Ops+One" media="all"/ -->
-	<!-- link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all"/ -->
 	<style type="text/css">
 		.add-to {
 			/*
@@ -334,7 +314,7 @@
 				if(evt.data.iframeheight.toString() !== '0'){
 					$("#iframe_id").attr('iframe-height', evt.data.iframeheight);
 					console.log('iframe height changed: ' + evt.data.iframeheight);
-					//modal.style.display = "block";
+					modal.style.display = "block";
 				}
 				
 				var childIframe = document.getElementById("iframe_id");
