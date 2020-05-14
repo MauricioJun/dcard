@@ -410,12 +410,12 @@
 				deferredPrompt.userChoice.then((choiceResult) => {
 					if (choiceResult.outcome === 'accepted') {
 						//console.log('User accepted the A2HS prompt');
-						sendToAnalytics(choiceResult.userChoice);
-						console.log('User accepted the A2HS prompt = ' + choiceResult.userChoice);
+						sendToAnalytics(choiceResult.outcome);
+						console.log('User accepted the A2HS prompt = ' + choiceResult.outcome);
 					} else {
 						//console.log('User dismissed the A2HS prompt');
-						sendToAnalytics(choiceResult.userChoice);
-						console.log('User dismissed the A2HS prompt = ' + choiceResult.userChoice);
+						sendToAnalytics(choiceResult.outcome);
+						console.log('User dismissed the A2HS prompt = ' + choiceResult.outcome);
 					}
 					deferredPrompt = null;
 				});
