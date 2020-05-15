@@ -333,10 +333,12 @@
 				if (isPwa()) {
 					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 1 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
+					sendToAnalytics('App','open','DCard Page');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				} else {
 					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 0 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
+					sendToAnalytics('Web','open','DCard Page');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				}
 			}
