@@ -416,24 +416,25 @@
 				//modaladd.style.display = 'none';
 				// Show the prompt
 				deferredPrompt.prompt();
+				sendToAnalytics('choice prompt','open','A2HS Prompt');
 				// Wait for the user to respond to the prompt
 				deferredPrompt.userChoice.then((choiceResult) => {
 					if (choiceResult.outcome === 'accepted') {
 						//console.log('User accepted the A2HS prompt');
-						sendToAnalytics(choiceResult.outcome);
+						sendToAnalytics(choiceResult.outcome,'click','A2HS Prompt');
 						console.log('User accepted the A2HS prompt = ' + choiceResult.outcome);
 					} else {
 						//console.log('User dismissed the A2HS prompt');
-						sendToAnalytics(choiceResult.outcome);
+						sendToAnalytics(choiceResult.outcome,'click','A2HS Prompt');
 						console.log('User dismissed the A2HS prompt = ' + choiceResult.outcome);
 					}
 					deferredPrompt = null;
 				});
 			});
-			function sendToAnalytics(userChoice) {
-				gtag('event', 'click', {
+			function sendToAnalytics(userChoice,eventName,eventCategory) {
+				gtag('event', eventName, {
 					'send_to': 'UA-165609361-1',
-					'event_category': 'A2HS Click',
+					'event_category': eventCategory,
 					'event_label': userChoice
 				});
 				console.log('Send to anakytics = ' + userChoice);
