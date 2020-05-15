@@ -333,23 +333,30 @@
 				if (isPwa()) {
 					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 1 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
-					sendToAnalytics('App','open','DCard Page');
+					sendToAnalytics02('App','open','DCard Page');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				} else {
 					var topmsg={ topname: 'mauriciojun.github.io', topfullscreen: 0 };
 					childIframe.contentWindow.postMessage(topmsg, '*');
-					sendToAnalytics('Web','open','DCard Page');
+					sendToAnalytics02('Web','open','DCard Page');
 					console.log('top iframe fullscreen sent!!! ' + topmsg.topfullscreen);
 				}
 			}
 			//return message;
 		}
-		
 		function isPwa() { 
 			var displayModes = ["fullscreen", "standalone", "minimal-ui"];
 			return displayModes.some(
 				(displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches
 			);
+		}
+		function sendToAnalytics02(userChoice,eventName,eventCategory) {
+			gtag('event', eventName, {
+				'send_to': 'UA-165609361-1',
+				'event_category': eventCategory,
+				'event_label': userChoice
+			});
+			console.log('Send to anakytics 02 = ' + userChoice);
 		}
 	</script>
 	<script>
