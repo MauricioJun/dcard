@@ -33,6 +33,16 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165609361-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-165609361-1');
+	</script>
+	
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -422,7 +432,7 @@
 			});
 			function sendToAnalytics(userChoice) {
 				gtag('event', 'click', {
-					'send_to': 'GTM-TJ8NZCV',
+					'send_to': 'UA-165609361-1',
 					'event_category': 'A2HS Click',
 					'event_label': userChoice
 				});
