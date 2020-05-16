@@ -9,7 +9,7 @@ self.addEventListener('install', function(e) {
 				'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
 				'https://www.blogger.com/static/v1/widgets/3905868452-widgets.js',
 				'https://www.blogger.com/static/v1/widgets/3597120983-css_bundle_v2.css',
-				'http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+				'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
 				'https://pro.fontawesome.com/releases/v5.12.0/css/all.css',
 				'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css',
 				'https://4.bp.blogspot.com/-iGmwG2cWl0Q/XkwIzmN7KEI/AAAAAAAAAH0/vqpB9wKlYQgq_K4LdNXgYr12po6U9UAiQCK4BGAYYCw/s0/mauricio-jun-information-technology-consulting-04-D.png',
