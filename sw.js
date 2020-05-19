@@ -4,6 +4,7 @@ var urlsToCache = [
 	'/dcard/index.html',
 	'/dcard/offline.html',
 	'/dcard/404.html',
+	'/dcard/favicon-vinho/favicon-512x512.png',
 	'/dcard/css/all.css',
 	'/dcard/webfonts/fa-brands-400.eot',
 	'/dcard/webfonts/fa-brands-400.svg',
