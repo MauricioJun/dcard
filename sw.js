@@ -4,6 +4,8 @@ self.addEventListener('install', function(e) {
 			return cache.addAll([
 				'/dcard/',
 				'/dcard/index.html',
+				'/dcard/offline.html',
+				'/dcard/404.html',
 				'https://pro.fontawesome.com/releases/v5.12.0/css/all.css',
 				'https://4.bp.blogspot.com/-iGmwG2cWl0Q/XkwIzmN7KEI/AAAAAAAAAH0/vqpB9wKlYQgq_K4LdNXgYr12po6U9UAiQCK4BGAYYCw/s0/mauricio-jun-information-technology-consulting-04-D.png',
 				'https://4.bp.blogspot.com/-tg4TLTPRzO0/XktzCvrIaxI/AAAAAAAAAGg/IrzX1YGZego5ABpR5gC5S8pz7tp6c1newCK4BGAYYCw/s1600/mauricio-jun-logo-horizontal-projetos-web-vinho-02.png',
