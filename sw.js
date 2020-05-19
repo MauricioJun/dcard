@@ -17,22 +17,15 @@ self.addEventListener('install', function(event) {
 		})
 	);
 });
-self.addEventListener('fetch', function(event) {
-	event.respondWith(
-	// Try the cache
-		caches.match(event.request).then(function(response) {
-			if (response) {
-				return response;
-			}
-			return fetch(event.request).then(function(response) {
-				if (response.status === 404) {
-					return caches.match('/404.html');
-				}
-				return response
+self.addEventListener('fetch', function(e) {
+	e.respondWith(
+		caches.open(CACHE_NAME).then(function(cache) {
+			return cache.match(e.request).then(function (response) {
+				return response || fetch(e.request).then(function(response) {
+					cache.put(e.request, response.clone());
+					return response;
+				});
 			});
-		}).catch(function() {
-		// If both fail, show a generic fallback:
-		return caches.match('/offline.html');
 		})
 	);
 });
