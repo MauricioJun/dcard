@@ -232,8 +232,10 @@
 	<!-- End Google Tag Manager (noscript) -->
 	
 	<script>
-		function checkoffline(navigator.onLine === false) {
-			location.replace("https://mauriciojun.github.io/dcard/offline.html")
+		function checkoffline() {
+			if (navigator.onLine === false) {
+				location.replace("https://mauriciojun.github.io/dcard/offline.html");
+			}
 		}
 	</script>
 	
