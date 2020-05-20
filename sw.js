@@ -71,9 +71,11 @@ self.addEventListener('fetch', function(event) {
 });
 */
 self.addEventListener('fetch', function(e) {
-	console.log(e.request.url);
+	console.log('e.request.url 01 = ' + e.request.url);
 	e.respondWith(
 		caches.match(e.request).then(function(response) {
+			console.log('response = ' + e.request.url);
+			console.log('e.request.url 02 = ' + e.request.url);
 			return response || fetch(e.request);
 		})
 	);
