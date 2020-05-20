@@ -64,8 +64,8 @@ self.addEventListener('fetch', function(event) {
 				return response
 			});
 		}).catch(function() {
-		// If both fail, show a generic fallback:
-		return caches.match('/dcard/offline.html');
+			// If both fail, show a generic fallback:
+			return caches.match('/dcard/offline.html');
 		})
 	);
 });
@@ -74,7 +74,7 @@ self.addEventListener('fetch', function(e) {
 	console.log('e.request.url 01 = ' + e.request.url);
 	e.respondWith(
 		caches.match(e.request).then(function(response) {
-			console.log('response = ' + e.request.url);
+			console.log('response = ' + response);
 			console.log('e.request.url 02 = ' + e.request.url);
 			return response || fetch(e.request);
 		})
