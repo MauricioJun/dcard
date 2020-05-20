@@ -33,6 +33,11 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
+	<script>
+		if (navigator.onLine === false) {
+			location.replace("/dcard/offline.html");
+		}
+	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165609361-1"></script>
 	<script>
@@ -225,20 +230,11 @@
 		button.firstbutt { margin-right: 10px !important; }
 	</style>
 </head>
-<body onload="checkoffline()">
+<body>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ8NZCV"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	
-	<script>
-		function checkoffline() {
-			if (navigator.onLine === true) {
-				alert('offline!');
-				location.replace("/dcard/offline.html");
-			}
-		}
-	</script>
 	
 	<!-- Trigger/Open The Modal -->
 	<!-- button id="myBtn" formaction="/home-screen/a2hs-02.html">Open Modal</button -->
