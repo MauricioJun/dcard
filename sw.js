@@ -75,6 +75,7 @@ self.addEventListener('fetch', function(e) {
 	e.respondWith(
 		caches.match(e.request).then(function(response) {
 			console.log('response = ' + response);
+			console.log('response.status = ' + response.status);
 			console.log('e.request.url 02 = ' + e.request.url);
 			return response || fetch(e.request);
 		})
