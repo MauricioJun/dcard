@@ -49,34 +49,39 @@ self.addEventListener('activate', function(event) {
 	);
 });
 /* FETCH */
-/*
 self.addEventListener('fetch', function(event) {
 	event.respondWith(
 	// Try the cache
 		caches.match(event.request).then(function(response) {
+			console.log('response 01 = ' + response);
 			if (response) {
 				return response;
 			}
 			return fetch(event.request).then(function(response) {
+				console.log('response.status = ' + response.status);
 				if (response.status === 404) {
 					return caches.match('/dcard/404.html');
 				}
+				console.log('response 02 = ' + response);
 				return response
 			});
 		}).catch(function() {
 			// If both fail, show a generic fallback:
+			console.log('offline event = ' + event);
 			return caches.match('/dcard/offline.html');
 		})
 	);
 });
-*/
+
+/*
 self.addEventListener('fetch', function(e) {
 	console.log('e.request.url 01 = ' + e.request.url);
 	e.respondWith(
 		caches.match(e.request).then(function(response) {
-			console.log('response = ' + response);
-			console.log('e.request.url 02 = ' + e.request.url);
+			//console.log('response = ' + response);
+			//console.log('e.request.url 02 = ' + e.request.url);
 			return response || fetch(e.request);
 		})
 	);
 });
+*/
