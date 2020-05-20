@@ -49,6 +49,7 @@ self.addEventListener('activate', function(event) {
 	);
 });
 /* FETCH */
+/*
 self.addEventListener('fetch', function(event) {
 	event.respondWith(
 	// Try the cache
@@ -65,6 +66,15 @@ self.addEventListener('fetch', function(event) {
 		}).catch(function() {
 		// If both fail, show a generic fallback:
 		return caches.match('/dcard/offline.html');
+		})
+	);
+});
+*/
+self.addEventListener('fetch', function(e) {
+	console.log(e.request.url);
+	e.respondWith(
+		caches.match(e.request).then(function(response) {
+			return response || fetch(e.request);
 		})
 	);
 });
