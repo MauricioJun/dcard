@@ -2,6 +2,7 @@ var CACHE_NAME = 'mauriciojun-dcard-offline-01';
 var urlsToCache = [
 	'/dcard/',
 	'/dcard/index.html',
+	'/dcard/app.html',
 	'/dcard/offline.html',
 	'/dcard/404.html',
 	'/dcard/favicon-vinho/favicon-512x512.png',
