@@ -473,12 +473,6 @@
 		elmnttochange.style.paddingBottom = elmntheight;
 		
 		window.onclick = function(e) { 
-			if (e.target.title && e.target.tagName.toLowerCase()==='a') {
-				console.log('Title = ' + e.target.title + ' | Tag Name = ' + e.target.tagName);
-				//alert('Title = ' + e.target.title + ' | Tag Name = ' + e.target.tagName);
-			}
-		};
-		window.onclick = function(e) { 
 			if (e.target.tagName.toLowerCase()==='a') {
 				if (e.target.title) {
 					sendToAnalytics02(e.target.title,'icons','DCard Page - Offline');
