@@ -462,6 +462,7 @@
 			}
 			document.getElementById(cityName).style.display = "block";
 			evt.currentTarget.className += " active";
+			sendToAnalytics02(cityName,'tabs','DCard Page - Offline');
 		}
 		
 		document.getElementById("defaultOpen").click();
