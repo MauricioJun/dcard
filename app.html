@@ -460,10 +460,10 @@
 		function getAddthisClicks() {
 			$( 'ul.at-expanding-share-button-services-list li' ).on( 'click', 'a', function() {
 				if ($( this ).find('title').text()) {
-					alert('item clicado = ' + $( this ).find('title').text());
-					//var sendicontitle = $( this ).find('title').text();
-					//sendToAnalytics(sendicontitle,'share','DCard Page - Addthis');
-					//console.log('Share clicado = ' + sendicontitle);
+					//alert('item clicado = ' + $( this ).find('title').text());
+					var sendicontitle = $( this ).find('title').text();
+					sendToAnalytics(sendicontitle,'share','DCard Page - Addthis');
+					console.log('Share Addthis clicado = ' + sendicontitle);
 				}
 			});
 		}
